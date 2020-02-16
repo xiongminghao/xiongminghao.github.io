@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+
+
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/kotori180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kotori32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kotori16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://nanxiaoxiong.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="为我们的弹幕添加更高端的代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I wanna 耐久制作教程（二）">
+<meta property="og:url" content="http://nanxiaoxiong.com/2020/02/07/thirdblog/index.html">
+<meta property="og:site_name" content="南小熊website">
+<meta property="og:description" content="为我们的弹幕添加更高端的代码">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/014.png">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/015.png">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/016.png">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/017.png">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/018.png">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/019.png">
+<meta property="article:published_time" content="2020-02-07T06:38:09.000Z">
+<meta property="article:modified_time" content="2020-02-12T10:09:23.917Z">
+<meta property="article:author" content="南小熊ww">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nanxiaoxiong.com/images/014.png">
+
+<link rel="canonical" href="http://nanxiaoxiong.com/2020/02/07/thirdblog/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>I wanna 耐久制作教程（二） | 南小熊website</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+<script src="/live2d-widget/autoload.js"></script>
+
+
+
+
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">南小熊website</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">芜湖~</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://nanxiaoxiong.com/2020/02/07/thirdblog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/sxc.jpg">
+      <meta itemprop="name" content="南小熊ww">
+      <meta itemprop="description" content="萌新">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南小熊website">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          I wanna 耐久制作教程（二）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-07 14:38:09" itemprop="dateCreated datePublished" datetime="2020-02-07T14:38:09+08:00">2020-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-12 18:09:23" itemprop="dateModified" datetime="2020-02-12T18:09:23+08:00">2020-02-12</time>
+              </span>
+
+          
+            <div class="post-description">为我们的弹幕添加更高端的代码</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>旋转发射弹幕（相当于非同时的splitobject）<br>新建obj，起名danmaku_4，用来发射弹幕，所以不用选精灵，create事件里写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spd&#x3D;5; &#x2F;&#x2F;速度</span><br><span class="line">dir&#x3D;0; &#x2F;&#x2F;出事方向</span><br><span class="line">flag&#x3D;1; &#x2F;&#x2F;(1 或 -1，控制正反转)</span><br><span class="line">step&#x3D;10; &#x2F;&#x2F;发射一次增加的角度度数</span><br><span class="line">alarm[0]&#x3D;1;</span><br></pre></td></tr></table></figure>
+<p>alarm[0]事件里写:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;instance_create(x,y,danmaku);</span><br><span class="line">a.speed&#x3D;spd;</span><br><span class="line">a.direction&#x3D;dir;</span><br><span class="line">dir+&#x3D;flag*step;</span><br><span class="line">alarm[0]&#x3D;4; &#x2F;&#x2F;发射间隔</span><br></pre></td></tr></table></figure>
+<p>时间轴里写:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instance_create(400,304,danmaku_4)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/014.png" alt><br>我们再复制5个danmaku_4出来，把它们的create事件里面的dir分别改成60,120,180,240,300，这样我们6个旋转弹幕的初始方向都不一样，相隔60度，然后把它们6个同时创建在一个位置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">instance_create(400,304,danmaku_4)</span><br><span class="line">instance_create(400,304,danmaku_4_1)</span><br><span class="line">instance_create(400,304,danmaku_4_2)</span><br><span class="line">instance_create(400,304,danmaku_4_3)</span><br><span class="line">instance_create(400,304,danmaku_4_4)</span><br><span class="line">instance_create(400,304,danmaku_4_5)&#x2F;&#x2F;名字自己起什么都行</span><br></pre></td></tr></table></figure>
+<p>就是这样的效果<br><img src="/images/015.png" alt><br>向(xx,yy)收缩/扩散：<br>收缩/扩散的弹幕里面写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">angle&#x3D;60; &#x2F;&#x2F;决定收缩的圈的大小，0~90度为收缩，90~180度为扩散，收缩时越靠近90度收缩形成的圈越大</span><br><span class="line">spd&#x3D;5;</span><br></pre></td></tr></table></figure>
+<p>step事件里写:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">direction&#x3D;point_direction(x,y,xx,yy)+angle;</span><br><span class="line">speed&#x3D;spd;</span><br></pre></td></tr></table></figure>
+<p>如果需要在某一时刻才收缩/扩散的话，create事件里加一句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;0</span><br></pre></td></tr></table></figure>
+<p>step事件改成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(a)</span><br><span class="line">&#123;</span><br><span class="line">    direction&#x3D;point_direction(x,y,xx,yy)+angle;</span><br><span class="line">    speed&#x3D;spd;</span><br><span class="line">&#125;</span><br><span class="line">在需要的时候，假设需要收缩&#x2F;扩散的obj名字叫danmaku，只需在时间轴或alarm事件里执行一下：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">danmaku.a&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>就触发了收缩/扩散的条件了，再扩展几个花形弹幕，还是会用即可：<br>线性花</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(i&#x3D;0;i&lt;max_num;i+&#x3D;1)&#123;</span><br><span class="line">a&#x3D;instance_create(x,y,objDanmaku);</span><br><span class="line">a.direction&#x3D;i*360&#x2F;max_num+dir0;</span><br><span class="line">a.speed&#x3D;(R-(R-r)&#x2F;(180&#x2F;n)*abs(((i*360&#x2F;max_num) mod (360&#x2F;n))-(180&#x2F;n)))&#x2F;frame;</span><br><span class="line">a.friction&#x3D;a.speed&#x2F;35;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考数值<br>max_num=60; n=6; R=150; r=70; dir0=0; frame=15;<br>正弦花</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(i&#x3D;0;i&lt;80;i+&#x3D;1)&#123;</span><br><span class="line">d &#x3D; 360*i&#x2F;80;</span><br><span class="line">a &#x3D; instance_create(x,y,apw)</span><br><span class="line">a.direction &#x3D; d;</span><br><span class="line">a.speed &#x3D; 5-3*power(abs(cos(degtorad(2.5*d))),2.5)</span><br><span class="line">a.friction &#x3D; a.speed &#x2F; 60;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更多弹幕请去nikaple吧查看，只搬运了其中几个过来</p>
+<h1 id="生成各种弹幕的其他方法"><a href="#生成各种弹幕的其他方法" class="headerlink" title="生成各种弹幕的其他方法"></a>生成各种弹幕的其他方法</h1><p>正方形：<br>我们先创造正方形的四个顶点，然后四个顶点依次沿着边运动，一边运动一边创造弹幕，我们在时间轴里写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i&#x3D;1</span><br><span class="line">repeat(4)</span><br><span class="line">&#123;</span><br><span class="line">a&#x3D;instance_create(400,304,danmaku_5)</span><br><span class="line">a.speed&#x3D;3</span><br><span class="line">a.direction&#x3D;45*i</span><br><span class="line">i+&#x3D;2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>四个顶点的弹幕就确定好了，创建obj，起名danmaku_5，选好精灵，设置好动画速度，create事件写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alarm[0]&#x3D;50</span><br></pre></td></tr></table></figure>
+<p>alarm[0]事件里面写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">speed&#x3D;0&#x2F;&#x2F;50步后静止</span><br><span class="line">xx&#x3D;x</span><br><span class="line">yy&#x3D;y&#x2F;&#x2F;x,y运动中一直在变，用xx,yy来保存固定的一开始的坐标</span><br><span class="line">alarm[1]&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>接下来我们就要让它们沿着四条边的方向运动了，由几何关系，在alarm[1]事件里写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">speed&#x3D;2</span><br><span class="line">direction&#x3D;point_direction(400,304,xx,yy)-135&#x2F;&#x2F;在纸上画个图就看出来了</span><br><span class="line">instance_create(x,y,danmaku)</span><br><span class="line">alarm[1]&#x3D;10</span><br></pre></td></tr></table></figure>
+<p><img src="/images/016.png" alt><br>然后微调以达到自己需要的效果，在需要切断的时候停止alarm[1]事件即可，同理，我们再写个五角星的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i&#x3D;1</span><br><span class="line">repeat(5)</span><br><span class="line">&#123;</span><br><span class="line">a&#x3D;instance_create(400,304,danmaku_5)</span><br><span class="line">a.speed&#x3D;3</span><br><span class="line">a.direction&#x3D;18*i</span><br><span class="line">i+&#x3D;4</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>alarm[1]:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">speed&#x3D;2</span><br><span class="line">direction&#x3D;point_direction(400,304,xx,yy)-162&#x2F;&#x2F;画图，向量，算角度，我帮你算好了</span><br><span class="line">instance_create(x,y,danmaku)</span><br><span class="line">alarm[1]&#x3D;10</span><br></pre></td></tr></table></figure>
+<p><img src="/images/017.png" alt><br>我们再回到polygon脚本，之前有个地方写错了，请改一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(j&#x3D;1;j&lt;&#x3D;argument3;j+&#x3D;1;)&#x2F;&#x2F;之前argument3写成argument0了</span><br></pre></td></tr></table></figure>
+<p>我们看到这个脚本用了两次for循环，结合参数可以看出第一个循环用j控制四个角，第二个循环用i控制每条边的弹幕，那么我们可以稍加利用，再第一个和第二个for循环体内都补充一句:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.image_index&#x3D;j</span><br></pre></td></tr></table></figure>
+<p>为了方便直接把整个代码放上来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">var a,i,j,dir,n,v,vv,ddd,k; </span><br><span class="line">n &#x3D; argument4-1</span><br><span class="line">dir&#x3D;argument6</span><br><span class="line">for(j&#x3D;1;j&lt;&#x3D;argument3;j+&#x3D;1;)&#123;</span><br><span class="line">a&#x3D;instance_create(argument0,argument1,argument2)</span><br><span class="line">v&#x3D;argument5</span><br><span class="line">ddd &#x3D; degtorad((180-(360&#x2F;argument3))&#x2F;2)</span><br><span class="line">k&#x3D;2*v*cos(ddd)</span><br><span class="line">a.speed&#x3D;argument5</span><br><span class="line">a.direction&#x3D;dir</span><br><span class="line">a.image_index&#x3D;j</span><br><span class="line">for(i&#x3D;1;i&lt;n;i+&#x3D;1;)&#123;</span><br><span class="line">a&#x3D;instance_create(argument0,argument1,argument2)</span><br><span class="line">a.speed&#x3D;abs(sqrt(sqr(v)+sqr(k*i&#x2F;n)-2*v*(k*i&#x2F;n)*cos(ddd)))</span><br><span class="line">vv&#x3D;a.speed</span><br><span class="line">a.direction&#x3D;dir+radtodeg(arccos((sqr(v)+sqr(vv)-sqr(k*i&#x2F;n))&#x2F;(2*v*(vv))))</span><br><span class="line">a.image_index&#x3D;j</span><br><span class="line">if(i&#x3D;&#x3D;n-1)&#123;</span><br><span class="line">dir +&#x3D; 360&#x2F;argument3</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就可以达到每条边创造的弹幕的图像不一样了，不过我们首先需要一个这样的图像，我们新建一个精灵，把所有颜色的苹果的图像的第一张复制进去，像这样的，我这里只复制了五个，最好多复制点，这个精灵名字改成sprCherryColor<br><img src="/images/018.png" alt><br>我们再把danmaku的精灵换成这个，记得image速度设置为0，不然它就颜色一直自动变化，我们用一下polygon脚本试试效果<br><img src="/images/019.png" alt><br>差不多就是这个样子，我们就学会了对某条边的弹幕进行xxx操作，利用编号更可以对其中一个弹幕进行xxx操作，不过一般用不到，下面是N角星的那个脚本，这个是NIHIL神仙写的，用了比较多的repeat，但是本质应该与polygon中的for是一样的（事实证明我错了），在repeat(_each)语句里面都补充一句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_inst.image_index&#x3D;ii&#x2F;&#x2F;var后面加个ii，然后初始化为0</span><br><span class="line">ii+&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>然后效果跟我预想中相差有点多，这个待我慢慢研究，可以先跳过<br>最后更新于（2020年2月12日18:09:16）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/31/firstblog/" rel="prev" title="欢迎来到我的网站>_<">
+      <i class="fa fa-chevron-left"></i> 欢迎来到我的网站>_<
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/07/secondblog/" rel="next" title="I wanna 耐久制作教程（一）">
+      I wanna 耐久制作教程（一） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">1.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成各种弹幕的其他方法"><span class="nav-number">2.</span> <span class="nav-text">生成各种弹幕的其他方法</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南小熊ww"
+      src="/images/sxc.jpg">
+  <p class="site-author-name" itemprop="name">南小熊ww</p>
+  <div class="site-description" itemprop="description">萌新</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiongminghao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiongminghao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/332382229@qq.com" title="E-Mail → 332382229@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005056462318616/home?from=page_100505&mod=TAB&is_hot=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005056462318616&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_hot&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南小熊ww</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  </div>
+<div class="powered-by">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+        本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">
+        本站访问量<span id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
