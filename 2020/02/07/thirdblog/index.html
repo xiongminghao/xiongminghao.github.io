@@ -65,8 +65,11 @@
 <meta property="og:image" content="http://nanxiaoxiong.com/images/017.png">
 <meta property="og:image" content="http://nanxiaoxiong.com/images/018.png">
 <meta property="og:image" content="http://nanxiaoxiong.com/images/019.png">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/020.gif">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/021.gif">
+<meta property="og:image" content="http://nanxiaoxiong.com/images/022.gif">
 <meta property="article:published_time" content="2020-02-07T06:38:09.000Z">
-<meta property="article:modified_time" content="2020-02-12T10:09:23.917Z">
+<meta property="article:modified_time" content="2020-02-19T04:19:08.927Z">
 <meta property="article:author" content="南小熊ww">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://nanxiaoxiong.com/images/014.png">
@@ -224,7 +227,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-12 18:09:23" itemprop="dateModified" datetime="2020-02-12T18:09:23+08:00">2020-02-12</time>
+                <time title="Modified: 2020-02-19 12:19:08" itemprop="dateModified" datetime="2020-02-19T12:19:08+08:00">2020-02-19</time>
               </span>
 
           
@@ -281,7 +284,36 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">var a,i,j,dir,n,v,vv,ddd,k; </span><br><span class="line">n &#x3D; argument4-1</span><br><span class="line">dir&#x3D;argument6</span><br><span class="line">for(j&#x3D;1;j&lt;&#x3D;argument3;j+&#x3D;1;)&#123;</span><br><span class="line">a&#x3D;instance_create(argument0,argument1,argument2)</span><br><span class="line">v&#x3D;argument5</span><br><span class="line">ddd &#x3D; degtorad((180-(360&#x2F;argument3))&#x2F;2)</span><br><span class="line">k&#x3D;2*v*cos(ddd)</span><br><span class="line">a.speed&#x3D;argument5</span><br><span class="line">a.direction&#x3D;dir</span><br><span class="line">a.image_index&#x3D;j</span><br><span class="line">for(i&#x3D;1;i&lt;n;i+&#x3D;1;)&#123;</span><br><span class="line">a&#x3D;instance_create(argument0,argument1,argument2)</span><br><span class="line">a.speed&#x3D;abs(sqrt(sqr(v)+sqr(k*i&#x2F;n)-2*v*(k*i&#x2F;n)*cos(ddd)))</span><br><span class="line">vv&#x3D;a.speed</span><br><span class="line">a.direction&#x3D;dir+radtodeg(arccos((sqr(v)+sqr(vv)-sqr(k*i&#x2F;n))&#x2F;(2*v*(vv))))</span><br><span class="line">a.image_index&#x3D;j</span><br><span class="line">if(i&#x3D;&#x3D;n-1)&#123;</span><br><span class="line">dir +&#x3D; 360&#x2F;argument3</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>就可以达到每条边创造的弹幕的图像不一样了，不过我们首先需要一个这样的图像，我们新建一个精灵，把所有颜色的苹果的图像的第一张复制进去，像这样的，我这里只复制了五个，最好多复制点，这个精灵名字改成sprCherryColor<br><img src="/images/018.png" alt><br>我们再把danmaku的精灵换成这个，记得image速度设置为0，不然它就颜色一直自动变化，我们用一下polygon脚本试试效果<br><img src="/images/019.png" alt><br>差不多就是这个样子，我们就学会了对某条边的弹幕进行xxx操作，利用编号更可以对其中一个弹幕进行xxx操作，不过一般用不到，下面是N角星的那个脚本，这个是NIHIL神仙写的，用了比较多的repeat，但是本质应该与polygon中的for是一样的（事实证明我错了），在repeat(_each)语句里面都补充一句：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_inst.image_index&#x3D;ii&#x2F;&#x2F;var后面加个ii，然后初始化为0</span><br><span class="line">ii+&#x3D;1</span><br></pre></td></tr></table></figure>
-<p>然后效果跟我预想中相差有点多，这个待我慢慢研究，可以先跳过<br>最后更新于（2020年2月12日18:09:16）</p>
+<p>然后效果跟我预想中相差有点多，这个待我慢慢研究，可以先跳过</p>
+<h1 id="边旋转边移动边扩散"><a href="#边旋转边移动边扩散" class="headerlink" title="边旋转边移动边扩散"></a>边旋转边移动边扩散</h1><p>新建obj，名字danmaku_7，create事件多一句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alarm[0]&#x3D;50</span><br></pre></td></tr></table></figure>
+<p>alarm[0]事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">speed&#x3D;0</span><br><span class="line">spin_init()</span><br><span class="line">alarm[1]&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>step事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(spin)</span><br><span class="line">&#123;</span><br><span class="line">spin_around(400,yy,len,dir,pi)</span><br><span class="line">yy&#x3D;304+50*sin(t)</span><br><span class="line">t+&#x3D;0.02</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>alarm[1]事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;instance_create(x,y,danmaku)</span><br><span class="line">a.speed&#x3D;point_distance(400,yy,x,y)&#x2F;20&#x2F;&#x2F;保证形状，分母数字越大速度越慢</span><br><span class="line">a.direction&#x3D;point_direction(400,yy,x,y)</span><br><span class="line">alarm[1]&#x3D;SPB</span><br></pre></td></tr></table></figure>
+<p>时间轴写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">polygon(400,304,danmaku_7,4,8,2,45)</span><br></pre></td></tr></table></figure>
+<p>这样就完成了，旋转中心纵坐标会在区间[304-50,304+50]上移动，横坐标移动同理<br><img src="/images/020.gif" alt></p>
+<h1 id="翻转"><a href="#翻转" class="headerlink" title="翻转"></a>翻转</h1><p>从最简单的苹果圈入手，先在时间轴写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">createCircuit(400,304,20,150,0,danmaku_8)</span><br></pre></td></tr></table></figure>
+<p>搞一个danmaku_8出来，假设我们直接开始翻转，create事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">len&#x3D;point_distance(x,304,400,304)</span><br><span class="line">xx&#x3D;x</span><br></pre></td></tr></table></figure>
+<p>翻转我们要确定对称轴，是上下翻转还是左右翻转，我们先来左右的，那么对称轴就是x=400，改变x就好了，我们把对称轴当成0的话，那么x就是从x移动到-x，然后再移动回来，显然要用三角函数,然后要再create事件保存一下初始距离和坐标<br>step事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if(n&gt;6 &amp;&amp; n&lt;15)</span><br><span class="line">sprite_index&#x3D;sprCherry</span><br><span class="line">else</span><br><span class="line">sprite_index&#x3D;sprCherryBlue&#x2F;&#x2F;两边的spr不一样便于观察</span><br><span class="line">if(xx&lt;400)</span><br><span class="line">&#123;</span><br><span class="line">    x&#x3D;xx+2*abs(len*sin(t))&#x2F;&#x2F;x由xx移动到-xx再移动回来的效果，下面同理</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">if(xx&gt;400)</span><br><span class="line">&#123;</span><br><span class="line">    x&#x3D;xx-2*abs(len*sin(t))</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">t+&#x3D;0.05</span><br></pre></td></tr></table></figure>
+<p>上下翻转同理,改变y就好了<br><img src="/images/021.gif" alt></p>
+<h1 id="神奇的曲线弹幕"><a href="#神奇的曲线弹幕" class="headerlink" title="神奇的曲线弹幕"></a>神奇的曲线弹幕</h1><p>我们新建一个obj，名字danmaku_9，时间轴：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i&#x3D;0</span><br><span class="line">repeat(6)</span><br><span class="line">&#123;</span><br><span class="line">a&#x3D;instance_create(400,304,danmaku_9)</span><br><span class="line">a.speed&#x3D;1</span><br><span class="line">a.direction&#x3D;i*60</span><br><span class="line">i+&#x3D;1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>danmaku_9的create事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alarm[0]&#x3D;1</span><br><span class="line">alarm[1]&#x3D;721&#x2F;&#x2F;转了一圈之后销毁，360&#x2F;step里的数再加1</span><br></pre></td></tr></table></figure>
+<p>alarm[0]事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">instance_create(x,y,danmaku)</span><br><span class="line">alarm[0]&#x3D;20</span><br></pre></td></tr></table></figure>
+<p>alarm[1]事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alarm[0]&#x3D;0</span><br><span class="line">instance_destroy()</span><br></pre></td></tr></table></figure>
+<p>step事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">direction+&#x3D;0.5&#x2F;&#x2F;数越小，转出来的圈就越大，但也别太小了</span><br></pre></td></tr></table></figure>
+<p>细节可以自行补充qwq我这里用了六种不同颜色的弹幕<br><img src="/images/022.gif" alt><br>最后更新于（2020年2月18日22:30:56）</p>
 
     </div>
 
@@ -297,13 +329,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/31/firstblog/" rel="prev" title="欢迎来到我的网站>_<">
-      <i class="fa fa-chevron-left"></i> 欢迎来到我的网站>_<
+    <a href="/2020/02/07/secondblog/" rel="prev" title="I wanna 耐久制作教程（一）">
+      <i class="fa fa-chevron-left"></i> I wanna 耐久制作教程（一）
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/07/secondblog/" rel="next" title="I wanna 耐久制作教程（一）">
-      I wanna 耐久制作教程（一） <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -363,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">1.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成各种弹幕的其他方法"><span class="nav-number">2.</span> <span class="nav-text">生成各种弹幕的其他方法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">1.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成各种弹幕的其他方法"><span class="nav-number">2.</span> <span class="nav-text">生成各种弹幕的其他方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边旋转边移动边扩散"><span class="nav-number">3.</span> <span class="nav-text">边旋转边移动边扩散</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#翻转"><span class="nav-number">4.</span> <span class="nav-text">翻转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神奇的曲线弹幕"><span class="nav-number">5.</span> <span class="nav-text">神奇的曲线弹幕</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
