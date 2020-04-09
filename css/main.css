@@ -1154,7 +1154,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #3cff03;
+  background: #6ca353;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2397,7 +2397,7 @@ hr {
   display: inline-block;
 }
 body {
-  background: url("http://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/4afbfbedab64034fd345b71ba5c379310a551d26.jpg");
+  background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586451562098&di=87ceb4c76ae4cd20b553007aa7bcacd2&imgtype=0&src=http%3A%2F%2Fdfpx6vcuck278.cloudfront.net%2Fgame%2F6883%2FC3MuzkV4wTi35XYEparBI64JoT6UHZKt.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
