@@ -6,7 +6,7 @@
   <link href="https://nanxiaoxiong.com/atom.xml" rel="self"/>
   
   <link href="https://nanxiaoxiong.com/"/>
-  <updated>2021-05-18T15:07:01.701Z</updated>
+  <updated>2021-05-17T10:52:08.000Z</updated>
   <id>https://nanxiaoxiong.com/</id>
   
   <author>
@@ -17,12 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>blog1</title>
+    <title>Hello World</title>
+    <link href="https://nanxiaoxiong.com/2021/05/20/hello-world/"/>
+    <id>https://nanxiaoxiong.com/2021/05/20/hello-world/</id>
+    <published>2021-05-20T04:05:14.674Z</published>
+    <updated>2021-05-17T10:52:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习环境配置</title>
     <link href="https://nanxiaoxiong.com/2021/05/18/blog1/"/>
     <id>https://nanxiaoxiong.com/2021/05/18/blog1/</id>
     <published>2021-05-18T15:07:01.000Z</published>
-    <updated>2021-05-18T15:07:01.701Z</updated>
+    <updated>2021-05-20T14:48:21.273Z</updated>
     
+    <content type="html"><![CDATA[<p>github上的代码版本太多,tensorflow1,tensorflow2,pytorch<br>于是决定同时在电脑上安装这三个<br>使用anaconda3:<br>注意：anaconda安装路径不能带有中文，win10用户名文件夹不能为中文，否则后面安装各种包可能会有error<br>找到版本对应的CUDA与cudnn<br>如果显卡很好的话CUDA要装10以上<br>安装版本:<br>pytorch 1.2.0<br>tensorflow-gpu 1.13.2<br>tensorflow-gpu 2.2.0<br>需要CUDA10.0+CUDA10.1两个版本，是可以共存的，安装路径不能相同<br>具体参考：<br><a href="https://blog.csdn.net/weixin_44791964/article/details/104702142">https://blog.csdn.net/weixin_44791964/article/details/104702142</a><br><a href="https://blog.csdn.net/weixin_44791964/article/details/106037141">https://blog.csdn.net/weixin_44791964/article/details/106037141</a><br><a href="https://blog.csdn.net/weixin_44791964/article/details/109161493?spm=1001.2014.3001.5501">https://blog.csdn.net/weixin_44791964/article/details/109161493?spm=1001.2014.3001.5501</a><br>conda建好三个环境就可以开始学习了，还要测试是否用了gpu而不是cpu<br>在pytorch环境中测试：<br>torch.cuda.is_available()<br>在tensorflow1和2环境中测试：<br>tensorflow.gpu.is_available()<br>都返回Ture就没问题了<br>还需要在对应环境中下载pillow（PIL）等包，运行时根据错误提示缺什么下什么即可</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;github上的代码版本太多,tensorflow1,tensorflow2,pytorch&lt;br&gt;于是决定同时在电脑上安装这三个&lt;br&gt;使用anaconda3:&lt;br&gt;注意：anaconda安装路径不能带有中文，win10用户名文件夹不能为中文，否则后面安装各种包可能会有</summary>
+      
     
     
     
@@ -34,7 +61,7 @@
     <link href="https://nanxiaoxiong.com/2021/05/17/xuan/"/>
     <id>https://nanxiaoxiong.com/2021/05/17/xuan/</id>
     <published>2021-05-17T14:36:09.000Z</published>
-    <updated>2021-05-17T14:53:41.666Z</updated>
+    <updated>2021-05-17T14:53:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>啊啊啊啊啊 啊哈</p><p>含金量 S6的含金量</p><p>国服登顶S6的含金量</p><p>ruo的含金量</p><p>ming的含金量</p><p>龙哥登顶S6的含金量</p><p>含金量 国服没有含金量</p><p>S11国服没有含金量</p><p>前十是谁呢 呃</p><p>没有含金量</p><p>龙哥国服没登顶</p><p>国服没有含金量</p><p>啊哈</p><p>龙哥含金量</p><p><img src="/2021/05/17/xuan/xuan.jpg" alt="炫神"></p>]]></content>
     
@@ -56,26 +83,6 @@
     
     
     <category term="炫神" scheme="https://nanxiaoxiong.com/tags/%E7%82%AB%E7%A5%9E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://nanxiaoxiong.com/2021/05/17/hello-world/"/>
-    <id>https://nanxiaoxiong.com/2021/05/17/hello-world/</id>
-    <published>2021-05-17T10:52:06.603Z</published>
-    <updated>2021-05-17T10:52:06.603Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
