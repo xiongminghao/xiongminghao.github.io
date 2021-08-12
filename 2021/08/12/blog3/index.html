@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="">
-  <title>DFS | 小熊の窝</title>
+  <title>二叉树遍历 | 小熊の窝</title>
   <meta name="author" content="MingHao Xiong" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="深度优先搜索（DFS）模板 1234567891011121314DFS(a,x,y)&amp;#123;if(终止条件)&amp;#123;&#x2F;&#x2F;什么都不做（也许）return 0;&amp;#125;else&amp;#123;...DFS(a,x+1,y);...return 结果;&amp;#125;&amp;#125; 为了防止反复横跳（左访问右，之后右又访问左），访问过的地方要变更一下值并设置在终止条件里。 变更后的值不用恢复，因为变">
+  <meta name="description" content="众所周知，二叉树的（前&#x2F;中&#x2F;后）遍历有两种（递归&#x2F;非递归）递归的方法很简单，这里记录一下非递归的遍历方式递归本质也就是用栈来保存每一次的结果所以非递归的方式也就是要用一个栈来保存遍历过的二叉树节点 以前序遍历为例： 1.每拿到一个节点就把它保存在栈中 2.继续对这个节点的左子树重复过程1，直到左子树为空 3.因为保存在栈中的节点都遍历了左子树但是没有遍历右子树，所以对栈中节点出栈 并对它的右子树重">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DFS">
-<meta property="og:url" content="https://nanxiaoxiong.com/2021/08/04/blog2/index.html">
+<meta property="og:title" content="二叉树遍历">
+<meta property="og:url" content="https://nanxiaoxiong.com/2021/08/12/blog3/index.html">
 <meta property="og:site_name" content="小熊の窝">
-<meta property="og:description" content="深度优先搜索（DFS）模板 1234567891011121314DFS(a,x,y)&amp;#123;if(终止条件)&amp;#123;&#x2F;&#x2F;什么都不做（也许）return 0;&amp;#125;else&amp;#123;...DFS(a,x+1,y);...return 结果;&amp;#125;&amp;#125; 为了防止反复横跳（左访问右，之后右又访问左），访问过的地方要变更一下值并设置在终止条件里。 变更后的值不用恢复，因为变">
+<meta property="og:description" content="众所周知，二叉树的（前&#x2F;中&#x2F;后）遍历有两种（递归&#x2F;非递归）递归的方法很简单，这里记录一下非递归的遍历方式递归本质也就是用栈来保存每一次的结果所以非递归的方式也就是要用一个栈来保存遍历过的二叉树节点 以前序遍历为例： 1.每拿到一个节点就把它保存在栈中 2.继续对这个节点的左子树重复过程1，直到左子树为空 3.因为保存在栈中的节点都遍历了左子树但是没有遍历右子树，所以对栈中节点出栈 并对它的右子树重">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://nanxiaoxiong.com/null">
-<meta property="article:published_time" content="2021-08-04T14:35:51.000Z">
-<meta property="article:modified_time" content="2021-08-04T15:08:29.375Z">
+<meta property="article:published_time" content="2021-08-12T06:35:51.000Z">
+<meta property="article:modified_time" content="2021-08-12T08:07:16.713Z">
 <meta property="article:author" content="MingHao Xiong">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nanxiaoxiong.com/null">
@@ -142,17 +142,17 @@
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
                 
-                    <h1 class="kratos-entry-title text-center">DFS</h1>
+                    <h1 class="kratos-entry-title text-center">二叉树遍历</h1>
                 
                 
                 <ul class="kratos-post-meta text-center">
-                    <li><i class="fa fa-calendar"></i> 2021-08-04</li>
+                    <li><i class="fa fa-calendar"></i> 2021-08-12</li>
                     <li><i class="fa fa-user"></i> 作者 MingHao Xiong</li>
                     <li>
                         <i class="fa fa-edit"></i> 
                         
                         
-                            750
+                            ~3.34K
                         
                         字
                     </li>
@@ -161,17 +161,33 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1628089709375"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1628755636713"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <p>深度优先搜索（DFS）模板</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">DFS(a,x,y)&#123;</span><br><span class="line">if(终止条件)</span><br><span class="line">&#123;</span><br><span class="line">//什么都不做（也许）</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">DFS(a,x+1,y);</span><br><span class="line">...</span><br><span class="line">return 结果;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>为了防止反复横跳（左访问右，之后右又访问左），访问过的地方要变更一下值并设置在终止条件里。</p>
-<p>变更后的值不用恢复，因为变了就代表访问过了，根据DFS定义，后面的点根本访问不到这个点，不会影响结果。</p>
-<p>一般都是先给一个初始值，对这个初始值进行递归，假设对一个二维数组中某个点开始DFS，并计算递归次数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int result=DFS(a,i,j);//数组为a，后面i,j代表下标</span><br><span class="line">DFS(int[][] a,int i,int j)//数组为a，后面x,y代表下标</span><br><span class="line">if(i&lt;0||j&lt;0||i&gt;=a.length||j&gt;=a[0].length||a[i][j]!=4396)//终止条件，其中i,j可以取到0</span><br><span class="line">&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    int count=1;</span><br><span class="line">    a[i][j]=4396;</span><br><span class="line">    count+=DFS(a,i+1,j);//一直向上递归</span><br><span class="line">    //count+=DFS(a,i-1,j);一直向下递归</span><br><span class="line">    //count+=DFS(a,i,j+1);一直向右递归</span><br><span class="line">    //count+=DFS(a,i,j-1);一直向左递归</span><br><span class="line">    //...</span><br><span class="line">    return count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于二叉树,99%是对自身左叶子节点和右叶子结点递归，终止条件：自身是否为null</p>
+                <p>众所周知，二叉树的（前/中/后）遍历有两种（递归/非递归）<br>递归的方法很简单，这里记录一下非递归的遍历方式<br>递归本质也就是用栈来保存每一次的结果<br>所以非递归的方式也就是要用一个栈来保存遍历过的二叉树节点</p>
+<p>以前序遍历为例：</p>
+<p>1.每拿到一个节点就把它保存在栈中</p>
+<p>2.继续对这个节点的左子树重复过程1，直到左子树为空</p>
+<p>3.因为保存在栈中的节点都遍历了左子树但是没有遍历右子树，所以对栈中节点出栈 并对它的右子树重复过程1</p>
+<p>4.直到遍历完所有节点</p>
+<h1 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h1><p>根 - &gt; 左 - &gt; 右</p>
+<p>入栈顺序即为前序遍历</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; preorderTraversal(TreeNode root) &#123;</span><br><span class="line">        List&lt;Integer&gt; list=new ArrayList&lt;&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stack=new Stack&lt;&gt;();</span><br><span class="line">        while(root!=null||!stack.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            while(root!=null)</span><br><span class="line">            &#123;</span><br><span class="line">                list.add(root.val);</span><br><span class="line">                stack.push(root);</span><br><span class="line">                root=root.left;</span><br><span class="line">            &#125;</span><br><span class="line">            root=stack.pop();</span><br><span class="line">            root=root.right;</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h1><p>左 - &gt; 根- &gt; 右</p>
+<p>出栈顺序即为中序遍历，改变一下写入列表的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        List&lt;Integer&gt; list=new ArrayList&lt;&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stack=new Stack&lt;&gt;();</span><br><span class="line">        while(root!=null||!stack.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            while(root!=null)</span><br><span class="line">            &#123;</span><br><span class="line">                stack.push(root);</span><br><span class="line">                root=root.left;</span><br><span class="line">            &#125;</span><br><span class="line">            root=stack.pop();</span><br><span class="line">            list.add(root.val);</span><br><span class="line">            root=root.right;</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h1><p>左 - &gt; 右- &gt; 根</p>
+<p>我们将前序遍历中节点插入列表尾部的逻辑，修改为将节点插入列表的头部</p>
+<p>那么结果链表就变为了：右 -&gt; 左 -&gt; 根</p>
+<p>我们将遍历的顺序由从左到右修改为从右到左，配合如果1</p>
+<p>那么结果链表就变为了：左 -&gt; 右 -&gt; 根</p>
+<p>这刚好是后序遍历的顺序</p>
+<p>这里使用的本质还是前序遍历，常规的解法更复杂一些</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        List&lt;Integer&gt; list=new ArrayList&lt;&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stack=new Stack&lt;&gt;();</span><br><span class="line">        while(root!=null||!stack.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            while(root!=null)</span><br><span class="line">            &#123;</span><br><span class="line">                list.add(0,root.val);</span><br><span class="line">                stack.push(root);</span><br><span class="line">                root=root.right;</span><br><span class="line">            &#125;</span><br><span class="line">            root=stack.pop();</span><br><span class="line">            root=root.left;</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h1><p>层次遍历没有递归的算法，所以不使用栈，使用队列</p>
+<p>先将根节点入队，之后出队，将其左孩子与右孩子入队，左孩子出队，左孩子的左右孩子入队，右孩子出队，右孩子的左右孩子入队。。。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; HierarchicalTraversal(TreeNode root) &#123;</span><br><span class="line">        List&lt;List&lt;TreeNode&gt;&gt; lists=new ArrayList&lt;&gt;();</span><br><span class="line">        List&lt;TreeNode&gt; list=new ArrayList&lt;&gt;();</span><br><span class="line">        list.add(root);</span><br><span class="line">        lists.add(list);</span><br><span class="line">        Queue&lt;TreeNode&gt; queue=new LinkedList&lt;&gt;();</span><br><span class="line">        queue.add(root);</span><br><span class="line">        while(!queue.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            int len=queue.size();</span><br><span class="line">            List&lt;TreeNode&gt; tlist=new ArrayList&lt;&gt;();</span><br><span class="line">            for(int i=0;i&lt;len;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                root=queue.poll();</span><br><span class="line">                if(root.left!=null)</span><br><span class="line">                &#123;</span><br><span class="line">                    queue.add(root.left);</span><br><span class="line">                    tlist.add(root.left);</span><br><span class="line">                &#125;</span><br><span class="line">                if(root.right!=null)</span><br><span class="line">                &#123;</span><br><span class="line">                    queue.add(root.right);</span><br><span class="line">                    tlist.add(root.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(tlist.size()!=0)</span><br><span class="line">                lists.add(tlist);</span><br><span class="line">        &#125;</span><br><span class="line">        return lists;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             </div>
             
@@ -225,7 +241,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "https://nanxiaoxiong.com/2021/08/04/blog2/",
+                text: "https://nanxiaoxiong.com/2021/08/12/blog3/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -237,10 +253,11 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://nanxiaoxiong.com/2021/08/04/blog2/";
-            const title         = "「DFS」";
-            const excerpt       = `深度优先搜索（DFS）模板
-1234567891011121314DFS(a,x,y)&#123;if(终止条件)&#123;//什么都不做（也许）return 0;&#125;else&#123;...DFS(a,x+1,y);.....`;
+            const hostUrl       = "https://nanxiaoxiong.com/2021/08/12/blog3/";
+            const title         = "「二叉树遍历」";
+            const excerpt       = `众所周知，二叉树的（前/中/后）遍历有两种（递归/非递归）递归的方法很简单，这里记录一下非递归的遍历方式递归本质也就是用栈来保存每一次的结果所以非递归的方式也就是要用一个栈来保存遍历过的二叉树节点
+以前序遍历为例：
+1.每拿到一个节点...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -262,7 +279,7 @@
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-08-04</span>
+                    <span>最后编辑：2021-08-12</span>
                     </div>
                 </div>
             </footer>
@@ -271,13 +288,9 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" 深度学习环境配置" href="/2021/05/18/blog1/">&lt; 上一篇</a>
+                    <a title=" DFS" href="/2021/08/04/blog2/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" 二叉树遍历" href="/2021/08/12/blog3/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
