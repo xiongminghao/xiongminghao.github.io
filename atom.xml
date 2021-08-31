@@ -6,7 +6,7 @@
   <link href="https://nanxiaoxiong.com/atom.xml" rel="self"/>
   
   <link href="https://nanxiaoxiong.com/"/>
-  <updated>2021-08-12T08:07:16.713Z</updated>
+  <updated>2021-08-31T15:05:18.644Z</updated>
   <id>https://nanxiaoxiong.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单链表</title>
+    <link href="https://nanxiaoxiong.com/2021/08/31/linklist/"/>
+    <id>https://nanxiaoxiong.com/2021/08/31/linklist/</id>
+    <published>2021-08-31T15:03:17.000Z</published>
+    <updated>2021-08-31T15:05:18.644Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java中单链表定义</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class ListNode &#123;</span><br><span class="line">      int val;</span><br><span class="line">      ListNode next;</span><br><span class="line">      ListNode() &#123;&#125;</span><br><span class="line">      ListNode(int val) &#123; this.val = val; &#125;</span><br><span class="line">      ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h1><p>初始状态：两个指针均指向头结点</p><p>快指针：一次走两步 （也有可能是先走，一次走一步）</p><p>慢指针：一次走一步</p><p>那么，如果结点个数为奇数个，当快指针走到最后一个结点时，慢指针正好指向中间结点</p><p>如果结点个数为偶数个，链表没有中间结点，或者可以说有两个中间结点，当快指针为空时，慢指针指向后中间结点，当快指针走到倒数第二个结点时，慢指针指向前中间结点，这些判断条件也会随着初始状态的不同而改变</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ListNode fast=head;</span><br><span class="line">ListNode slow=head;</span><br><span class="line">while(p.next!=null&amp;&amp;p.next.next!=null)&#123;</span><br><span class="line">    //p.next==null指p走到最后一个结点</span><br><span class="line">    //p.next.next==null指p走到倒数第二个结点</span><br><span class="line">    slow=slow.next;</span><br><span class="line">    fast=fast.next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>那么此时的slow就是链表的中间结点或前中间结点<br><img src="/2021/08/31/linklist/%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9.png"></p><p>延伸1：如果快指针与慢指针相遇了，那么链表一定有环</p><p>如果链表没有环，那么快指针永远在慢指针前面，并且差距越拉越大，永远不可能相遇，但是如果链表有环，那么快指针走着走着就会沿着环循环了，这时慢指针会逐渐跟上，并且二者一定会在环的某个结点相遇（想象一下操场跑步）</p><p>只考虑两个指针第一次相遇（头结点不算），这时经过了时间t，慢指针走了t步，快指针走了2t步，快指针一定比慢指针多走了n圈，也就是路程差距t一定是环长的整数倍，再代换一下，慢指针走的路程t一定是环长的整数倍，那么，这时再让两个指针一个从头，一个从相遇处开始走，这两个指针相遇的地方就是环的入口<br><img src="/2021/08/31/linklist/%E7%8E%AF.png"></p><p>延伸2：这次快指针一次走一步，但快指针先走一段时间后慢指针再开始走，如果快指针先走n步，之后慢指针才开始走，两者都是一次一步，那么当快指针为空时，慢指针正好指向链表倒数第n个结点</p><p>假设链表长度为N（N&gt;=n），快指针走了n步之后，其后面还有（N-1-n）个结点，这时慢指针开始走，当快指针指向空结点时，又经过了（N-n）步，那么经过这（N-n）步慢指针指向了第（N-n+1）个结点，它后面还有（n-1）个结点，那么它就是倒数第n个结点<br><img src="/2021/08/31/linklist/%E5%80%92%E6%95%B0%E7%BB%93%E7%82%B9.png"></p><h1 id="前驱指针"><a href="#前驱指针" class="headerlink" title="前驱指针"></a>前驱指针</h1><p>一般情况下，单链表只有后继指针，用于访问目前结点的下一个结点，但是有些情况下也需要访问目前结点的前一个结点，我们可以定义一个pre指针</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ListNode p=head;</span><br><span class="line">ListNode pre=null;</span><br><span class="line">while(p!=null)&#123;</span><br><span class="line">  pre=p;</span><br><span class="line">  p=p.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>需要访问某个结点的上一个结点时，就可以遍历到这个结点，pre就指向了它的前驱</p><p>//TODO</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Java中单链表定义&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>二叉树遍历</title>
