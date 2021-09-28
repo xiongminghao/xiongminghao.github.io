@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XMH的个人网站</title>
+  
+  
+  <link href="https://nanxiaoxiong.com/atom.xml" rel="self"/>
+  
+  <link href="https://nanxiaoxiong.com/"/>
+  <updated>2021-09-28T14:43:08.366Z</updated>
+  <id>https://nanxiaoxiong.com/</id>
+  
+  <author>
+    <name>MingHao Xiong</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot</title>
+    <link href="https://nanxiaoxiong.com/2021/09/28/springboot/"/>
+    <id>https://nanxiaoxiong.com/2021/09/28/springboot/</id>
+    <published>2021-09-28T14:43:08.000Z</published>
+    <updated>2021-09-28T14:43:08.366Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode</title>
+    <link href="https://nanxiaoxiong.com/2021/09/28/leetcode/"/>
+    <id>https://nanxiaoxiong.com/2021/09/28/leetcode/</id>
+    <published>2021-09-28T14:42:58.000Z</published>
+    <updated>2021-09-28T14:42:58.615Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
